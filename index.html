@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frontend Developer Portfolio - Denise Lara. Explore my projects and skills.">
+    <meta name="keywords" content="Frontend Developer, Denise Lara, HTML, CSS, JavaScript, React, Portfolio">
+    <title>Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/new_logo.jpg" type="image/jpg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@latest/fonts/remixicon.css"> 
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+
+
+<body>    
+    <!--NAVBAR SECTION-->
+    <header class="header" id="nav">
+        <nav class="nav container">
+        <div class="logo">
+            <a href="#" class="logo__content">
+                <p><span class="span">Port</span>folio</p>
+            </a>
+        </div>
+    
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#" class="nav__link">
+                        <i class="ri-home-3-line"></i>
+                        Home
+                    </a>
+                </li>
+    
+                <li class="nav__item">
+                    <a href="#projects" class="nav__link">
+                        <i class="ri-file-list-line"></i> 
+                        Projects
+                    </a>
+                </li>
+    
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">
+                        <i class="ri-user-line"></i> 
+                        About Me
+                    </a>
+                </li>
+    
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link button">
+                        <i class="ri-chat-1-line"></i> 
+                        Contact Me
+                    </a>
+                </li>
+            </ul>
+    
+            <!--CLOSE BUTTON-->
+            <button class="nav__close" id="nav-close" aria-label="close menu">
+                <i class="ri-close-large-line"></i>
+            </button>
+        </div>
+    
+        <!--TOGGLE MENU-->
+        <button class="nav__toggle" id="nav-toggle" aria-label="open menu">
+            <i class="ri-apps-2-line"></i>
+        </button>
+      </nav>
+    </header>
+
+
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+
+   
+    <!-- HERO SECTION -->
+    <section class="principal container" id="home">
+    <div class="principal__image">
+        <img 
+            src="./images/deni.png" 
+            alt="Denise Lara" 
+            class="principal__img" 
+            loading="lazy"
+        >
+    </div>
+  
+    <div class="principal__content">
+        <h1 class="principal__title">Denise Lara</h1>
+        <h3 class="principal__subtitle">Frontend Developer</h3>
+        <p class="principal__description">
+            I build responsive and user-friendly websites with clean and modern code.
+        </p>
+        
+        <div class="contacts__container">
+        <a 
+            class="principal__button" 
+            href="/cv/DeniseL.pdf"
+            download="Denise_Lara_CV.pdf" 
+            rel="noopener noreferrer" 
+            aria-label="Download Denise Lara's CV"
+        >
+            Download CV
+        </a>
+
+        <div class="footer-socials">
+            <ul class="footer-socials-list">
+                <li class="footer-socials-item">
+                    <a 
+                        class="footer-socials-link" 
+                        href="https://www.linkedin.com/in/denise-lara-925458320" 
+                        aria-label="Linkedin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="ri-linkedin-box-fill"></i>
+                    </a>
+                </li>
+
+                <li class="footer-socials-item">
+                    <a 
+                        class="footer-socials-link" 
+                        href="https://github.com/DeniseLara" 
+                        aria-label="Github"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="ri-github-fill"></i>
+                    </a>
+                 </li>
+              </ul>
+          </div>
+          </div>
+
+    </div>
+    </section>
+
+
+    <!-- PROJECTS SECTION -->
+    <main>
+        <section class="projects" id="projects">
+        <h2 class="projects__title">Projects</h2>
+
+        <div class="projects__container container">
+        <article class="projects__content">
+            <img 
+                src="images/calorieproo.jpg" 
+                alt="Caloriepro webapp homepage image" 
+                class="projects__image" 
+                loading="lazy"
+            >
+            <div class="projects__data">
+                <h3 class="projects__name">CaloriePro</h3>
+                <p class="projects__description">
+                    React web app that integrates with the Edamam API to fetch nutritional 
+                    information. Users can log meals, track calorie history, and manage 
+                    personal profiles with Firebase handling authentication, real-time database, 
+                    and data persistence.
+                </p>
+            </div>
+
+            <div class="projects__skills">
+                <span class="projects__skill">React</span>
+                <span class="projects__skill">React Router</span>
+                <span class="projects__skill">JavaScript</span>
+                <span class="projects__skill">Firebase</span>
+                <span class="projects__skill">Node.js</span>
+                <span class="projects__skill">Python</span>
+                <span class="projects__skill">CSS</span>
+            </div>
+
+            <div class="projects__links">
+                <a 
+                    href="https://caloriepro.onrender.com" 
+                    class="projects__icon-button"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="Visit Project"
+                >
+                    <i class="ri-link"></i>
+                </a>
+
+                <a 
+                    href="https://github.com/DeniseLara/CaloriePro" 
+                    class="projects__icon-button"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="View Code on GitHub"
+                >
+                    <i class="ri-github-fill"></i>
+                </a>
+            </div>
+        </article>
+
+        <article class="projects__content">
+            <img 
+                src="images/cinevibee.jpg" 
+                alt="Cinevibe website homepage image" 
+                class="projects__image" 
+                loading="lazy"
+            >
+            <div class="projects__data">
+                <h3 class="projects__name">CineVibe</h3>
+                <p class="projects__description">
+                   React-based website using the TMDb API to display trailers, details, and 
+                   ratings. Users can save their favorite films locally using localStorage, 
+                   with a responsive design built in pure CSS. 
+                </p>         
+            </div>
+
+            <div class="projects__skills">
+                <span class="projects__skill">React</span>
+                <span class="projects__skill">React Router</span>
+                <span class="projects__skill">JavaScript</span>
+                <span class="projects__skill">CSS</span>
+            </div>
+
+            <div class="projects__links">
+                <a 
+                    href="https://cinevibe-o7ln.onrender.com/" 
+                    class="projects__icon-button"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="Visit Project"
+                >
+                    <i class="ri-link"></i>
+                </a>
+
+                <a 
+                    href="https://github.com/DeniseLara/CineVibe" 
+                    class="projects__icon-button"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="View Code on GitHub"
+                >
+                    <i class="ri-github-fill"></i>
+                </a>
+            </div>
+         </article>
+
+        <article class="projects__content">
+            <img 
+                src="images/proyecto3.jpg" 
+                alt="Buynow website homepage image" 
+                class="projects__image" 
+                loading="lazy"
+            >
+            <div class="projects__data">
+                <h3 class="projects__name">Buynow</h3>
+                <p class="projects__description">
+                    E-commerce website built with React and Firebase authentication, 
+                    featuring a Node.js + Express backend to simulate Stripe payments. 
+                    Users can log in, add items to the cart, and simulate a checkout process.
+                </p>         
+            </div>
+
+            <div class="projects__skills">
+                <span class="projects__skill">React</span>
+                <span class="projects__skill">React Router</span>
+                <span class="projects__skill">JavaScript</span>
+                <span class="projects__skill">Firebase</span>
+                <span class="projects__skill">CSS</span>
+                <span class="projects__skill">Stripe</span>
+                <span class="projects__skill">Node.js</span>
+                <span class="projects__skill">Express</span>
+            </div>
+
+            <div class="projects__links">
+                <a 
+                    href="https://buynow-gy88.onrender.com" 
+                    class="projects__icon-button"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="Visit Project"
+                >
+                    <i class="ri-link"></i>
+                </a>
+
+                <a 
+                    href="https://github.com/DeniseLara/Buynow" 
+                    class="projects__icon-button"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="View Code on GitHub"
+                >
+                    <i class="ri-github-fill"></i>
+                </a>
+            </div>
+        </article>
+        </div>
+        </section>
+    </main>
+    
+
+    <!-- ABOUT ME SECTION -->
+    <section class="about__container container" id="about">
+        <div class="aboutme">
+            <h2 class="aboutme__title">About me</h2>
+            <p class="aboutme__description"> 
+                I'm a self-taught Frontend Developer passionate about building modern, 
+                functional, and user-centered websites. Since 2024, I've been learning 
+                web development on my own, creating practical projects that have helped me 
+                strengthen my skills and grow as a developer.
+            </p>
+        </div>
+
+        <section class="skills container">
+        <h2 class="skills__title">Skills</h2>
+            <div class="skills__container">
+                <article class="skills__content">
+                    <h2 class="skills__content-title">
+                        <i class="fa-brands fa-html5"></i>
+                    </h2>
+                    <p class="skills__content-subtitle">HTML</p>
+                </article>
+
+                <article class="skills__content">
+                    <h2 class="skills__content-title">
+                        <i class="fa-brands fa-css3"></i>
+                    </h2>
+                    <p class="skills__content-subtitle">CSS</p>
+                </article>
+
+                <article class="skills__content">
+                    <h2 class="skills__content-title">
+                        <i class="fa-brands fa-js"></i>
+                    </h2>
+                    <p class="skills__content-subtitle">JAVASCRIPT</p>
+                </article>
+
+                <article class="skills__content">
+                    <h2 class="skills__content-title">
+                        <i class="fa-brands fa-react"></i>
+                    </h2>
+                    <p class="skills__content-subtitle">REACT</p>
+                </article>
+
+                <article class="skills__content">
+                    <h2 class="skills__content-title">
+                        <i class="fa-brands fa-npm"></i>
+                    </h2>
+                    <p class="skills__content-subtitle">NPM</p>
+                </article>
+
+                <article class="skills__content">
+                    <h2 class="skills__content-title">
+                        <i class="fa-brands fa-node"></i>
+                    </h2>
+                    <p class="skills__content-subtitle">NODEJS</p>
+                </article>
+            </div>
+        </section>
+    </section>
+
+    
+    <!-- CONTACT SECTION -->
+    <section class="contact container" id="contact">
+        <article class="contact__content">
+            <h2 class="contact__title">Contact</h2>
+            <p class="contact__description">
+                I would love to hear about your project and how I could help. 
+                Please fill in the form, and I’ll get back to you as soon as 
+                possible.
+            </p>
+        </article>
+
+        <form 
+            id="contact-form" 
+            class="contact__form" 
+        >
+            <label class="sr-only" for="name">Name</label>
+            <input 
+                type="text" 
+                class="contact__form-input" 
+                placeholder="NAME" 
+                name="name"
+                id="name" 
+                required
+            >
+            <label class="sr-only" for="email">Email</label>
+            <input 
+                type="email" 
+                class="contact__form-input" 
+                placeholder="EMAIL" 
+                name="email" 
+                id="email"
+                required
+            >
+            <label class="sr-only" for="message">Message</label>
+            <textarea 
+                type="text" 
+                class="contact__form-input message" 
+                placeholder="MESSAGE" 
+                name="message"
+                id="message" 
+                required
+            ></textarea>
+         
+            <button 
+                type="submit" 
+                class="contact__form-button" 
+                aria-label="send message"
+            >
+                Send message
+            </button>
+             
+            <div class="form-message" id="form-message"></div>
+        </form>
+    </section>
+
+
+    <!-- FOOTER SECTION -->
+    <footer>          
+        <div class="footer container">
+            <div class="footer-links">
+            <h4 class="footer-links-title">Quick Links</h4>
+            <ul class="footer-link-list">
+                <li>
+                    <a class="footer-link" href="#">Home</a>
+                </li>
+                <li>
+                    <a class="footer-link" href="#projects">Projects</a>
+                </li>
+                <li>
+                    <a class="footer-link" href="#about">About me</a>
+                </li>
+                <li>
+                    <a class="footer-link" href="#contact">Contact me</a>
+                </li>
+            </ul>
+            </div>
+       
+            <div class="footer-credits-rights">
+            <h4 class="footer-links-title">Resources & Credits</h4>
+            <ul class="footer-credits-rights-list">
+                <li>
+                    Icons by 
+                    <a 
+                        class="footer-credits-right" 
+                        href="https://remixicon.com/" 
+                        target="_blank" 
+                        aria-label="go to remixicon website"
+                    >
+                        Remix Icon
+                    </a>
+                </li> 
+                <li>
+                    Images from 
+                    <a 
+                        class="footer-credits-right" 
+                        href="https://www.flaticon.com/" 
+                        target="_blank" 
+                        aria-label="go to flaticon website"
+                    >
+                        Flaticon
+                    </a>
+                </li>
+                <li>
+                    Fonts by 
+                    <a 
+                        class="footer-credits-right" 
+                        href="https://fonts.google.com/" 
+                        target="_blank" 
+                        aria-label="go to google fonts website"
+                    >
+                        Google Fonts
+                    </a>
+                </li>
+            </ul>
+            </div>
+            </div>
+
+            <div class="footer__credits">
+                <p class="footer__credits-title">
+                    © 2024 Denise Lara. All rights reserved.
+                </p>
+            </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
