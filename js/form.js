@@ -62,13 +62,13 @@ export function initForm() {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, name, message })})
-                const data = await res.json();
-                if (data.success) {
-                    showMessage('Your message has been sent successfully!', 'success');
-                    contactForm.reset();
-                } else {
-                    showMessage('There was an error sending your message. Please try again later.', 'error');
-                }
+            const data = await res.json();
+            if (data.success) {
+                showMessage('Your message has been sent successfully!', 'success');
+                contactForm.reset();
+            } else {
+                showMessage('There was an error sending your message. Please try again later.', 'error');
+            }
         } catch {
             showMessage('There was an error sending your message. Please try again later.', 'error');
         } finally {
