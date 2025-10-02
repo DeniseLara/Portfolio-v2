@@ -13,8 +13,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 # Configuración de Flask-Mail
-app.config['MAIL_SERVER'] = os.getenv("MAIL_SERVER")
-app.config['MAIL_PORT'] = 2525 #465
+app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
+app.config['MAIL_PORT'] = os.getenv('MAIL_PORT') #465
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False #lo cambie a false  
 app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')  
