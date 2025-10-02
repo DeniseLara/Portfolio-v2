@@ -24,13 +24,7 @@ app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_USERNAME')
 mail = Mail(app)
 
 # Configurar CORS para permitir solicitudes de frontend local
-CORS(app, origins= [
-    "https://portfolio-wn18.onrender.com", 
-    "https://portfolio-1-5lml.onrender.com"
-], 
-supports_credentials=True, 
-methods=["GET", "POST", "OPTIONS"], 
-allow_headers=["Content-Type"])
+CORS(app, resources={r"/*": {"origins": [ "https://portfolio-wn18.onrender.com" ]}})
 
 @app.route('/', methods=['GET'])
 def home():

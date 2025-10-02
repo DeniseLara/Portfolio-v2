@@ -30,7 +30,7 @@ export function initForm() {
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     let isSending = false;
 
-    contactForm.addEventListener('submit', function (e) {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         if (isSending) return;
@@ -57,29 +57,24 @@ export function initForm() {
         submitBtn.textContent = 'Sending...';
 
         // Si todo es válido, enviamos los datos al backend
-        fetch("https://portfolio-backend-ryj4.onrender.com/send-email", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json', 
-            },
-            body: JSON.stringify({ email, name, message }), 
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            if (data.success) {
-                showMessage('Your message has been sent successfully!', 'success');
-                contactForm.reset();
-            } else {
-                showMessage('There was an error sending your message. Please try again later.', 'error');
-            }
-        })
-        .catch(() => {
+        try {
+            const res = await fetch("https://portfolio-backend-ryj4.onrender.com/send-email", {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, name, message })})
+                const data = await res.json();
+                if (data.success) {
+                    showMessage('Your message has been sent successfully!', 'success');
+                    contactForm.reset();
+                } else {
+                    showMessage('There was an error sending your message. Please try again later.', 'error');
+                }
+        } catch {
             showMessage('There was an error sending your message. Please try again later.', 'error');
-        })
-        .finally(() => {
+        } finally {
             isSending = false;
             submitBtn.disabled = false;
             submitBtn.textContent = 'Send Message';
-        });
+        };
     });
 }
