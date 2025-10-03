@@ -1,4 +1,4 @@
-export function initForm(emailjs) {
+export function initForm() {
     // Inicializar EmailJS
     emailjs.init({
         publicKey: "JKOou6Kbc_j92zBU0",
@@ -10,7 +10,7 @@ export function initForm(emailjs) {
                 "bot@",                  
                 "noreply@",              
             ],
-            watchVariable: "user_email" 
+            watchVariable: "email" 
         },
         limitRate: { throttle: 10000 }, 
     });
@@ -78,9 +78,9 @@ export function initForm(emailjs) {
                 "service_gjjettg",     
                 "template_mpyysgv",    
                 {
-                    user_email: email,
-                    user_name: name,
-                    message: message
+                    email,
+                    name,
+                    message,
                 }
             );
 
