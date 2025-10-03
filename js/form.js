@@ -1,4 +1,9 @@
 export function initForm() {
+    // Lógica del envío
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    let isSending = false;
+
     // Función para validar el formato del correo electrónico
     function validateEmail(email) {
         const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -25,19 +30,12 @@ export function initForm() {
         }, 5000); // 5000 ms = 5 segundos
     }
 
-    // Lógica del envío
-    const contactForm = document.getElementById('contact-form');
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    let isSending = false;
-
-    contactForm.addEventListener('submit', async (e) => {
+    contactForm.addEventListener('submit',  async (e) => {
         e.preventDefault();
-
+        
         if (isSending) return;
 
         const email = document.querySelector('input[name="email"]').value;
-        const message = document.querySelector('textarea[name="message"]').value;
-        const name = document.querySelector('input[name="name"]').value;
 
         // Validar si el correo tiene un formato válido
         if (!validateEmail(email)) {
@@ -56,26 +54,26 @@ export function initForm() {
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
 
-        // Si todo es válido, enviamos los datos al backend
-         try {
-            await emailjs.send(
-                "service_gjjettg", //"service_gjjettg",     
-                "template_mpyysgv",    
-                {
-                    email,
-                    name,
-                    message,
-                }
-            );
+          // Enviar los datos con fetch a FormBold directamente
+        try {
+            const formData = new FormData(contactForm);
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+            });
 
-            showMessage("Your message has been sent successfully!", "success");
-            contactForm.reset();
+            if (response.ok) {
+                showMessage('Your message has been sent successfully!', 'success');
+                contactForm.reset();
+            } else {
+                showMessage('There was an error sending your message. Please try again later.', 'error');
+            }
         } catch {
             showMessage('There was an error sending your message. Please try again later.', 'error');
         } finally {
             isSending = false;
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
-        };
+            submitBtn.textContent = 'Send message';
+        }
     });
 }
