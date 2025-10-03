@@ -1,4 +1,20 @@
-export function initForm() {
+export function initForm(emailjs) {
+    // Inicializar EmailJS
+    emailjs.init({
+        publicKey: "JKOou6Kbc_j92zBU0",
+        blockHeadless: true,
+        blockList: {
+            list: [
+                "spam@example.com",      
+                "test@gmail.com",       
+                "bot@",                  
+                "noreply@",              
+            ],
+            watchVariable: "user_email" 
+        },
+        limitRate: { throttle: 10000 }, 
+    });
+
     // Función para validar el formato del correo electrónico
     function validateEmail(email) {
         const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -57,18 +73,19 @@ export function initForm() {
         submitBtn.textContent = 'Sending...';
 
         // Si todo es válido, enviamos los datos al backend
-        try {
-            const res = await fetch("https://portfolio-backend-ryj4.onrender.com/send-email", {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, name, message })})
-            const data = await res.json();
-            if (data.success) {
-                showMessage('Your message has been sent successfully!', 'success');
-                contactForm.reset();
-            } else {
-                showMessage('There was an error sending your message. Please try again later.', 'error');
-            }
+         try {
+            await emailjs.send(
+                "service_gjjettg",     
+                "template_mpyysgv",    
+                {
+                    user_email: email,
+                    user_name: name,
+                    message: message
+                }
+            );
+
+            showMessage("Your message has been sent successfully!", "success");
+            contactForm.reset();
         } catch {
             showMessage('There was an error sending your message. Please try again later.', 'error');
         } finally {
