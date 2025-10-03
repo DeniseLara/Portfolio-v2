@@ -59,7 +59,7 @@ export function initForm() {
         // Si todo es válido, enviamos los datos al backend
          try {
             await emailjs.send(
-                "service_gjjettg",     
+                "service_gjjettg", //"service_gjjettg",     
                 "template_mpyysgv",    
                 {
                     email,
