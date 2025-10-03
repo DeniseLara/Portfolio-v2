@@ -1,20 +1,4 @@
 export function initForm() {
-    // Inicializar EmailJS
-    emailjs.init({
-        publicKey: "JKOou6Kbc_j92zBU0",
-        blockHeadless: true,
-        blockList: {
-            list: [
-                "spam@example.com",      
-                "test@gmail.com",       
-                "bot@",                  
-                "noreply@",              
-            ],
-            watchVariable: "email" 
-        },
-        limitRate: { throttle: 10000 }, 
-    });
-
     // Función para validar el formato del correo electrónico
     function validateEmail(email) {
         const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
