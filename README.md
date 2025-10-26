@@ -23,7 +23,7 @@ Incluye validaciones personalizadas hechas en **JavaScript** para mejorar la exp
 
 ## 🌍 Deploy
 El sitio está desplegado en **Render**:
-- [Versión actualizada] (https://deniselara.onrender.com)
+- [Versión actualizada](https://deniselara.onrender.com)
 
 🔙 **Versión anterior del portafolio**  
 Para comparar la evolución del diseño y funcionalidades, puedes ver la versión anterior aquí:  
