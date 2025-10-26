@@ -32,6 +32,9 @@
 }
 
 body{
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
     font-family: var(--font-body);
     background: var(--body-color) ;
     color: var(--color-text);
@@ -150,8 +153,8 @@ p {
 
 /* === BASE ANIMATIONS === */
 :root {
-  --animation-duration: 1.5s;
-  --animation-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --animation-duration: 1.2s;
+  --animation-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 @keyframes fadeIn {
@@ -167,7 +170,7 @@ p {
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
@@ -178,7 +181,7 @@ p {
 @keyframes fadeInDown {
   0% {
     opacity: 0;
-    transform: translateY(-50px);
+    transform: translateY(-20px);
   }
   100% {
     opacity: 1;
@@ -189,7 +192,7 @@ p {
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-20px);
   }
   100% {
     opacity: 1;
@@ -208,20 +211,14 @@ p {
   }
 }
 
-@keyframes fadeInUpScale {
-  0% {
-    opacity: 0;
-    transform: translateY(30px) scale(0.98);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
 [data-scroll-animate] {
   opacity: 0;
   transform: translateY(50px);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transition: transform 0.8s var(--animation-ease),
+              opacity 0.8s var(--animation-ease);
 }
 
 [data-scroll-animate].animate {
@@ -243,11 +240,6 @@ p {
 
 .fade-scale.animate {
   animation: fadeInScale var(--animation-duration) var(--animation-ease) forwards;
-  will-change: transform, opacity;
-}
-
-.fade-up-scale.animate {
-  animation: fadeInUpScale var(--animation-duration) var(--animation-ease) forwards;
   will-change: transform, opacity;
 }
 
@@ -400,9 +392,10 @@ p {
 /* ==== HERO SECTION ====*/
 .hero{
     text-align: center;
-    position: relative;
-    overflow: hidden;
-    padding-top: 4.5rem;
+}
+
+.hero__container {
+    padding-top: 2rem;
 }
 
 .hero__content {
@@ -480,7 +473,7 @@ p {
     box-shadow: 
         0 0 20px rgba(34, 114, 255, 0.4),
         inset 0 0 20px rgba(34, 114, 255, 0.2);
-    width: clamp(14rem, 36vw, 26rem); 
+    width: clamp(14rem, 36vw, 28rem); 
     aspect-ratio: 1 / 1; 
     overflow: hidden; 
     border-radius: 50%;
@@ -506,7 +499,6 @@ p {
     object-position: top center;
     border-radius: 50%;
     background: var(--body-color);
-    filter: brightness(1) contrast(1.05);
     transition: filter 0.3s ease;
 }
 
@@ -734,7 +726,7 @@ p {
 }
 
 .skills__content:hover {
-    transform:translateY(-6px);
+    transform:translateY(-8px);
     border-color: rgba(56, 189, 248, 0.4);
     box-shadow: 
         0 10px 25px rgba(0, 0, 0, 0.2),
@@ -1008,7 +1000,7 @@ footer{
     .aboutme__container,
     .projects__container,
     .contact__container {
-        grid-template-columns: 400px;
+        grid-template-columns: 360px;
         justify-content: center;
     }
 }
@@ -1166,12 +1158,8 @@ footer{
         margin-inline: auto;
     }
 
-    .section {
-        padding-block: 7rem 2rem;
-    }
-
     .hero__container {
-        grid-template-columns: 450px 550px;
+        grid-template-columns: 455px 550px;
         column-gap: 7rem;
         padding-block: 2rem 3rem;
     }
