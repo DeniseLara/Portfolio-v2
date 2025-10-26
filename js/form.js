@@ -54,7 +54,7 @@ export function initForm() {
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
 
-          // Enviar los datos con fetch a FormBold directamente
+        // Enviar los datos con fetch a FormBold
         try {
             const formData = new FormData(contactForm);
             const response = await fetch(contactForm.action, {

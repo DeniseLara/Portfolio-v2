@@ -1,28 +1,29 @@
 # 🌐 Personal Portfolio Website
-Este es mi portafolio web, donde muestro quién soy, mis habilidades, mis proyectos y una forma de contactarme. Lo desarrollé con HTML, CSS, JavaScript y Python para el backend del formulario de contacto.
+Este es mi portafolio web, donde muestro quién soy, mis habilidades, mis proyectos y una forma de contactarme. Fue desarrollado completamente con **HTML, CSS y JavaScript**, aplicando buenas prácticas de código y diseño responsive.
 
 
 ## 🚀 Tecnologías utilizadas
 - HTML5
 - CSS3
 - JavaScript
-- Python (Flask)
-- Render (para desplegar el backend y frontend)
+- Render (para desplegar el frontend)
 
 
 ## 📬 Formulario de contacto
-El formulario de contacto incluye validaciones personalizadas para mejorar la experiencia del usuario y evitar correos no deseados:
 
-- ✅ Validación del formato del correo electrónico.
-- ✅ Verificación del dominio del correo (solo se aceptan `gmail.com`, `yahoo.com` y `outlook.com`).
-- ✅ Mensajes de éxito o error visibles en pantalla.
-- ✅ Envío de datos al backend usando `fetch` con formato JSON.
+Mi formulario de contacto está conectado con **FormBold**, lo que me permite recibir los mensajes directamente sin necesidad de un backend propio.  
+Incluye validaciones personalizadas hechas en **JavaScript** para mejorar la experiencia del usuario y evitar correos no deseados.
 
+**Características principales:**
+- ✅ Validación del formato del correo electrónico.  
+- ✅ Verificación del dominio del correo (solo se aceptan `gmail.com`, `yahoo.com` y `outlook.com`).  
+- ✅ Prevención de envíos múltiples simultáneos.  
+- ✅ Mensajes dinámicos de éxito o error visibles en pantalla.  
+- ✅ Envío de datos a **FormBold** mediante `fetch`.
 
 ## 🌍 Deploy
 El sitio está desplegado en **Render**:
 - Frontend: [portfolio-wn18.onrender.com](https://portfolio-wn18.onrender.com)
-- Backend: [portfolio-1-5lml.onrender.com](https://portfolio-1-5lml.onrender.com)
 
 
 ## 💡 Notas
