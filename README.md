@@ -25,6 +25,10 @@ Incluye validaciones personalizadas hechas en **JavaScript** para mejorar la exp
 El sitio está desplegado en **Render**:
 - Frontend: [https://deniselara.onrender.com]
 
+🔙 **Versión anterior del portafolio**  
+Para comparar la evolución del diseño y funcionalidades, puedes ver la versión anterior aquí:  
+- [Versión antigua](https://portfolio-wn18.onrender.com)  
+
 
 ## 💡 Notas
 - Este proyecto es parte de mi aprendizaje autodidacta como desarrolladora frontend.
