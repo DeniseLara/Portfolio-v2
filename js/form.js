@@ -1,3 +1,7 @@
+// ============================================
+// CONTACT FORM LOGIC
+// ============================================
+
 export function initForm() {
     // Lógica del envío
     const contactForm = document.getElementById('contact-form');

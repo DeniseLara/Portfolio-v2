@@ -1,3 +1,7 @@
+// ============================================
+// MENU BEHAVIOR
+// ============================================
+
 export function initNav() {
     // SHOW MENU 
     const navMenu = document.getElementById("nav-menu"),

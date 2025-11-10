@@ -1,51 +1,22 @@
+// ============================================
+// CUSTOM SCROLL BEHAVIOR (Header + Active Link)
+// ============================================
+
 export function initScroll() {
     new ScrollAnimator();
 }
 
-// ===== Scroll Animation and Navbar Behavior ===== //
 class ScrollAnimator { 
     constructor() { 
         this.header = document.querySelector('.header'); 
-        this.sections = document.querySelectorAll('section[id]')
+        this.sections = document.querySelectorAll('section[id]');
         this.init(); 
     } 
     
     init() { 
-        this.observeElements();
         this.setupScrollListener();
         this.setupSmoothScroll(); 
     } 
-    
-
-    observeElements() {
-        const elements = document.querySelectorAll("[data-scroll-animate]");
-        const sequentialMap = {
-            '.project-wrapper': 200,
-            '.card-wrapper': 100,
-        };
-
-        elements.forEach(el => {
-            let delay = 0;
-            for (const selector in sequentialMap) {
-                if (el.matches(selector)) {
-                    const index = Array.from(document.querySelectorAll(selector)).indexOf(el);
-                    delay = index * sequentialMap[selector];
-                }
-            }
-
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => entry.target.classList.add('animate'), delay);
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            observer.observe(el);
-        });
-    }
-
 
     setupScrollListener() {
         if (!this.header) return;
@@ -54,7 +25,6 @@ class ScrollAnimator {
         });
     }
     
-
     setupSmoothScroll() {
         const updateActiveLink = () => {
             const scrollY = window.pageYOffset;
@@ -78,5 +48,4 @@ class ScrollAnimator {
         window.addEventListener('scroll', updateActiveLink);
         updateActiveLink();
     }
-
 }
