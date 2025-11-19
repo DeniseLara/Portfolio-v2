@@ -203,8 +203,25 @@ p {
         height: 100%;
         z-index: 1;
         padding: 7.5rem 4rem;
-        border-left: 1px solid var(--primary-color);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
         transition: right .4s;
+    }
+
+    .nav__menu::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background: linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(56, 189, 248, 0.3) 30%,
+            rgba(34, 114, 255, 0.4) 50%,
+            rgba(56, 189, 248, 0.3) 70%,
+            transparent 100%
+        );
     }
 }
 
