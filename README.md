@@ -1,4 +1,4 @@
-# Personal Portfolio Website
+# Personal Portfolio Web
 Este es mi portafolio web, donde muestro quién soy, mis habilidades, mis proyectos y una forma de contactarme. Fue desarrollado completamente con **HTML, CSS y JavaScript**, aplicando buenas prácticas de código y diseño responsive.
 
 
@@ -6,7 +6,6 @@ Este es mi portafolio web, donde muestro quién soy, mis habilidades, mis proyec
 - HTML5
 - CSS3
 - JavaScript
-- Render (para desplegar el frontend)
 
 
 ## Formulario de contacto
@@ -31,8 +30,7 @@ Para comparar la evolución del diseño y funcionalidades, puedes ver la versió
 
 
 ## Notas
-- Este proyecto es parte de mi aprendizaje autodidacta como desarrolladora frontend.
-- Agradezco cualquier feedback o sugerencia para seguir mejorando.
+- Este proyecto es parte de mi aprendizaje autodidacta como desarrolladora frontend. Agradezco cualquier feedback o sugerencia para seguir mejorando.
 
 ---
 
