@@ -468,7 +468,6 @@ p {
 
 .projects__card {
     background: rgba(24, 24, 54, 0.75);
-    border: 1px solid rgba(56, 189, 248, 0.15); 
     border-radius: 1.5rem;
     padding: 1.2rem;
     height: 100%;
@@ -477,13 +476,11 @@ p {
         0 2px 8px rgba(56, 189, 248, 0.05);    
     text-align: start;
     transition: transform 0.3s ease, 
-    border-color 0.3s ease, 
     box-shadow 0.3s ease;
 }
 
 .projects__card:hover {
     transform: translateY(-6px);
-    border-color: rgba(56, 189, 248, 0.4);
     box-shadow: 
         0 16px 40px rgba(0, 0, 0, 0.3),
         0 8px 25px rgba(56, 189, 248, 0.15);
